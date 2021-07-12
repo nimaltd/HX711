@@ -146,3 +146,15 @@ float hx711_coef_get(hx711_t *hx711)
   return hx711->coef;  
 }
 //#############################################################################################
+void hx711_power_down(hx711_t *hx711)
+{
+  HAL_GPIO_WritePin(hx711->clk_gpio, hx711->clk_pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(hx711->clk_gpio, hx711->clk_pin, GPIO_PIN_SET);
+  hx711_delay(1);  
+}
+//#############################################################################################
+void hx711_power_up(hx711_t *hx711)
+{
+  HAL_GPIO_WritePin(hx711->clk_gpio, hx711->clk_pin, GPIO_PIN_RESET);
+}
+//#############################################################################################
