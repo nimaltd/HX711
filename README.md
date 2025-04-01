@@ -10,7 +10,7 @@
 * After init, you can read value.
 
 Example
-```
+``` c
 #include "hx711.h"
 
 hx711_t loadcell;
